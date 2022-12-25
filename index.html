@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title id="title">UVCC Prototype</title>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+		<script src="script.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="https://cdn.pixabay.com/photo/2020/08/03/18/36/drop-5460807_1280.png">
+	</head>
+
+	<body>
+      	<div id="surface-breaker">
+		<div>
+			<h1>I want to sterilize water which has...</h1>
+			<form onSubmit="run();" name="formForContaminant">
+				<input id="contaminant" list="organisms" name="inputOfContaminant" placeholder="ie. Escherichia coli" rows="1"/>
+           	<form>
+              
+	<datalist id="organisms">
+  <option value="Escherichia coli">
+  <option value="Cryptosporidium hominis">
+  <option value="Cryptosporidium parvum">
+  <option value="Giardia lamblia">
+  <option value="Legionella pneumophila">
+  <option value="Naegleria fowleri">
+  <option value="Caclicivirus feline">
+  <option value="Shigella sonnei">
+  <option value="Salmonella typhimurium">
+</datalist>
+              <div id="div1"></div>
+              <h1>What is UVCC?</h1>
+              <p id="special">The UVCC (Ultraviolet Conduit Cell) is a prototype built by the 2022 Clarkson SS Engineering Idol design team. It is a proposed part of our concept solution to address the ongoing boil water advisory in the North Caribou Lake first nations community, which has an undetermined lift date. As the water in the community is contaminated with E. coli, our system is primarily designed to kill the E. coli present in their water. Our system was designed to be ultra-compact (to aid in transportation), durable, and most importantly cost-effective. With a budget of under $150, we designed a system capable of sterilizing (in 24h) over 23 times what the average household uses per day! (based on E. coli the target bacteria of our prototype, the bacteria present in the water at the North Caribou Lake first nations community.)<p>
+              <h1>What can the UVCC kill</h1>
+              <p>The UVCC can kill any organism suspended in water including bacteria, viruses, protozoa, spores, algae, and other microorganisms. This program is mean to illustrate the various flow rates that our system will need to run at, depending on the organism it is intending to kill. Our system is specifically designed to have an adjustable flow rate, something which could be automated in future versions of our prototype. To see our calculations in how we derive our flow rate, click <a href="https://www.google.com" target="_blank">here</a>. To view our research source for requisite values to kill certain organisms click <a href="https://uvsolutionsmag.com/stories/pdf/archives/180301_UVSensitivityReview_full.pdf" target="_blank">here</a>. You can find hundreds of organisms in this document, which you can input into our calculator if you have the requisite mJ/cm<sup>2</sup> value!</p>
+		<div>
+        </div>
+	<body>
+    <form>
+  <label for="slider">Slider:</label><br>
+  <input type="range" min="0" max="100" value="50" class="slider" id="slider" oninput="showValue(this.value)">
+</form>
+<br>
+<p>Value: <span id="sliderValue">50</span></p>
+      <h2>Prototype  and  website  designed  by  Brendan  C,  Jovan  M,  Kevin  P,  Lukas  F,  and  Vasil  T from  Clarkson  Secondary  School  in  Missisauga,  Ontario.  Site  last  updated:  February  26th  2022.</h2>
+<html>
