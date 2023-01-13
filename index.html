@@ -1,49 +1,229 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title id="title">UVCC Prototype</title>
-		<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-		<script src="script.js"></script>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="https://cdn.pixabay.com/photo/2020/08/03/18/36/drop-5460807_1280.png">
-	</head>
 
-	<body>
-      	<div id="surface-breaker">
-		<div>
-			<h1>I want to sterilize water which has...</h1>
-			<form onSubmit="run();" name="formForContaminant">
-				<input id="contaminant" list="organisms" name="inputOfContaminant" placeholder="ie. Escherichia coli" rows="1"/>
-           	<form>
-              
-	<datalist id="organisms">
-  <option value="Escherichia coli">
-  <option value="Cryptosporidium hominis">
-  <option value="Cryptosporidium parvum">
-  <option value="Giardia lamblia">
-  <option value="Legionella pneumophila">
-  <option value="Naegleria fowleri">
-  <option value="Caclicivirus feline">
-  <option value="Shigella sonnei">
-  <option value="Salmonella typhimurium">
-</datalist>
-              <div id="div1"></div>
-              <h1>What is UVCC?</h1>
-              <p id="special">The UVCC (Ultraviolet Conduit Cell) is a prototype built by the 2022 Clarkson SS Engineering Idol design team. It is a proposed part of our concept solution to address the ongoing boil water advisory in the North Caribou Lake first nations community, which has an undetermined lift date. As the water in the community is contaminated with E. coli, our system is primarily designed to kill the E. coli present in their water. Our system was designed to be ultra-compact (to aid in transportation), durable, and most importantly cost-effective. With a budget of under $150, we designed a system capable of sterilizing (in 24h) over 23 times what the average household uses per day! (based on E. coli the target bacteria of our prototype, the bacteria present in the water at the North Caribou Lake first nations community.)<p>
-              <h1>What can the UVCC kill</h1>
-              <p>The UVCC can kill any organism suspended in water including bacteria, viruses, protozoa, spores, algae, and other microorganisms. This program is mean to illustrate the various flow rates that our system will need to run at, depending on the organism it is intending to kill. Our system is specifically designed to have an adjustable flow rate, something which could be automated in future versions of our prototype. To see our calculations in how we derive our flow rate, click <a href="https://www.google.com" target="_blank">here</a>. To view our research source for requisite values to kill certain organisms click <a href="https://uvsolutionsmag.com/stories/pdf/archives/180301_UVSensitivityReview_full.pdf" target="_blank">here</a>. You can find hundreds of organisms in this document, which you can input into our calculator if you have the requisite mJ/cm<sup>2</sup> value!</p>
-		<div>
+<head>
+  <title id="title">UVCC Prototype</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="https://cdn.pixabay.com/photo/2020/08/03/18/36/drop-5460807_1280.png">
+</head>
+
+
+<body onload="run()">
+  <hr>
+  <h1 class="text-center title">THE UVCC</h1>
+  <p class="text-center text-muted title-cation">Autonomous Water Sterilization - JavaScript, C++, HTML/CSS, and Bootstrap</p>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div>
+          <h1>What is The UVCC?</h1>
+          <p id="special">The UVCC (Ultraviolet Conduit Cell) is a water sterilization prototype built by the 2022 CLK
+            Engineering Idol design team, designed to autonomously disinfect pathogen-contaminated water.
+            <br>
+            <br>
+            Designed to be compact (to aid in transportation to communities under boil-water advisories),
+            cost-effective, and highly scalable, the prototype we manufactured is capable of sterilizing over 36 000 plastic
+            water bottles worth of water in a day.
+          </p>
+          <p id="Expand1*" style="display:none">
+            Moreover, this is the equivalent of how much 29 Canadian households use in a day! These numbers are
+            based on average household usage of 630L of water per day and a standard 500ml water bottle with E. coli
+            disinfection of 99.99%.
+          </p>
+
+          <p>
+            <button id="Expand1" onclick="expandCollapse(this.id)">
+              More info (expand)
+            </button>
+          </p>
         </div>
-	<body>
-    <form>
-  <label for="slider">Slider:</label><br>
-  <input type="range" min="0" max="100" value="50" class="slider" id="slider" oninput="showValue(this.value)">
-</form>
-<br>
-<p>Value: <span id="sliderValue">50</span></p>
-      <h2>Prototype  and  website  designed  by  Brendan  C,  Jovan  M,  Kevin  P,  Lukas  F,  and  Vasil  T from  Clarkson  Secondary  School  in  Missisauga,  Ontario.  Site  last  updated:  February  26th  2022.</h2>
-<html>
+      </div>
+      <div class="col-md-3">
+        <figure>
+          <img src="main-body.png" class="img-fluid" alt="Outer body shell of the completed prototype.">
+          <figcaption class="text-center text-muted">The outer body of the completed prototype.</figcaption>
+        </figure>
+
+      </div>
+
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <figure>
+          <img src="image-of-code.png" class="img-fluid" alt="Code developed for the fluid analysis algorithm">
+          <figcaption class="text-center text-muted">This is a portion of the JavaScript code I developed for the fluid
+            analysis algorithm.
+          </figcaption>
+        </figure>
+
+      </div>
+      <div class="col-md-9">
+        <div>
+          <h1>My role in the project</h1>
+          <p id="special">Within this team, I designed a fluid analysis algorithm in JavaScript using object-oriented
+            programming which computes the physics requisite to determine what flowrate our system is safe to run at.
+            This algorithm optimized the flow rate of the prototype by 30% by decreasing the minimum tollerance for
+            error with the flow rate. This fluid analysis was heavily used to implement design decisions as we could
+            responsively see how our system would react. Below is a visualizer I built which demonstrates how the
+            protype can be scaled to disinfect more or less water as required.
+          </p>
+          <p id="Expand2*" style="display:none">
+            Within this project I was also involved with the integration of sensors to make the system autonomous using an Arduino and code in C++. Further below is a description of how the system works from a mechanical and software sense.
+          </p>
+
+          <button id="Expand2" onclick="expandCollapse(this.id)">More info (expand)</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <hr>
+
+ <div id="visualizer">
+    <h1 class="text-center">Interative Flow Rate Visualizer</h1>
+    <p class="text-center">Under this configuration the prototype can run at <span id="result">12.65</span> L/min. This
+      is equivalent to <span id="result2">18216</span>L/day.</p>
+
+  <div class="container-fluid" style="width: 100%;">
+    <div class="row">
+      <div class="col-3">
+        <p  id="visualizer-textclass"class="slider">mJ/cm<sup>2</sup> to kill pathogen: <span id="pathogen">6</span></p>
+      </div>
+      <div class="col-3">
+        <form>
+          <input type="range" min="0.5" max="15" value="6" step="0.01" class="slider" id="pathogen"
+            oninput="showValue(this.value, this.id)">
+        </form>
+    
+      </div>
+      <div class="col-3">
+        <p  id="visualizer-textclass"class="slider">Bulb Output: <span id="theo-bulb-output">9000</span> mW</p>
+      </div>
+      <div class="col-3">
+        <form>
+          <input type="range" min="1000" max="13000" value="9000" class="slider" id="theo-bulb-output"
+            oninput="showValue(this.value, this.id)">
+        </form>
+          </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <p  id="visualizer-textclass"class="slider">Bulb Efficiency: <span id="bulb-efficiency">1.455</span> %</p>
+      </div>
+      <div class="col-3">
+        <form>
+          <input type="range" min="0.01" max="3" value="1.455" step="0.01" class="slider" id="bulb-efficiency"
+            oninput="showValue(this.value, this.id)">
+        </form>
+          </div>
+      <div class="col-3">
+        <p  id="visualizer-textclass"class="slider">Bulb Radius: <span id="bulbradius">1.15</span> cm</p>
+      </div>
+      <div class="col-3">
+        <form>
+          <input type="range" min="0.5" max="3.5" value="1.15" step="0.01" class="slider" id="bulbradius"
+            oninput="showValue(this.value, this.id)">
+        </form>
+          </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <p  id="visualizer-textclass" class="slider">Bulb Length: <span id="length">17</span> cm</p>
+      </div>
+      <div class="col-3">
+        <form>
+          <input type="range" min="3" max="30" value="17" step="0.1" class="slider" id="length"
+            oninput="showValue(this.value, this.id)">
+        </form>
+          </div>
+      <div class="col-3">
+        <p  id="visualizer-textclass" class="slider">System Radius: <span id="radius">5.08</span> cm</p>
+      </div>
+      <div class="col-3">
+        <form>
+          <input type="range" min="4" max="10" value="5.08" step="0.01" class="slider" id="radius"
+            oninput="showValue(this.value, this.id)">
+        </form>
+          </div>
+    </div>
+  </div>
+ </div>
+
+
+ 
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div>
+          <h1>What can the UVCC kill</h1>
+          <p>The UVCC can kill any organism suspended in water including bacteria, viruses, protozoa, spores, algae, and other microorganisms. This is as the ultraviolet wavelength emited by the bulb destroys any RNA or DNA in the organism preventing them from reproducing. Depending on the organism that is being targeted it will run at different flow rates to ensure the safety of the water. For a handy research source for requisite values to kill certain organisms in mW<a  href="https://uvsolutionsmag.com/stories/pdf/archives/180301_UVSensitivityReview_full.pdf" target="_blank"> click here</a>. You can find hundreds of organisms in this document, which you can input into our visualizer if you have the requisite mJ/cm<sup>2</sup> value!</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+          <figure>
+             <img src="petri-dish-plain-backing.png" alt="0" class="img-fluid carousel-padding" id="image-gallery1">
+            <figcaption>
+              <span id="gallery1-caption" class="text-center text-muted">Petri dishes swabbed with Lake Ontario water. Dish on left used the lake water processed through the UVCC.</span>
+           <button style="font-family: 'Roboto', sans-serif; color: black; font-size: 12px; text-align: left;" onclick="changeGallery(false, true)" id="back-button">
+             Previous Image
+           </button>
+           <button style="font-family: 'Roboto', sans-serif; color: black; font-size: 12px; text-align: left;" onclick="changeGallery(true, true)" id="next-button">
+             Next Image
+           </button>
+            </figcaption>
+          </figure>
+      </div>
+      </div>
+    </div>
+  </div>
+<hr>
+  <div class="description">
+      <h1 class="text-center">How it works</h1>
+      <p>The mechanics of the prototype are fundamentally based on water flowing past a sterilization bulb which emits light at a wavelength optimized to disinfect. The water is pumped through using a pump with a variable flow rate which is controled by a waterproof servo and measured using a hall-effect flow rate sensor. This allows the water to dynamically controlled at a rate which is deemed safe based on the software fluid analysis algorithm, allowing the system to be effective with changing water pressure. Moreover, there is a photodiode and a small LED at opposite points of the circumference and this setup allows the system to calibrates the relative turbidity of the water and adjust the flow rate to ensure that the UVC sterilization bulb is effective. Finally the system is lined which a reflective sheathing to ensure maximum light exposure, and a buzzer alarm and killswitch allowing the system to disconnect from power and shut off the water supply if a leak is detected or the water is moving at an unsafe rate. </p>
+  </div>
+
+<hr>
+<div class="container">
+    <h1 class="text-center">Photo Gallery</h1>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+      <figure>
+             <img src="body-shell-2.jpg" alt="0" class="img-fluid carousel-padding" id="image-gallery2">
+            <figcaption>
+              <span id="gallery2-caption" class="text-center text-muted"></span>
+            <button style="font-family: 'Roboto', sans-serif; color: black; font-size: 12px; text-align: left;" onclick="changeGallery(false, false)" id="back-button">
+             Previous Image
+           </button>
+           <button style="font-family: 'Roboto', sans-serif; color: black; font-size: 12px; text-align: left;" onclick="changeGallery(true, false)" id="next-button">
+             Next Image
+           </button>
+            </figcaption>
+          </figure>  
+      <div>
+      <div class="col-md-1"></div>
+      </div>
+      </div>
+<hr>
+    <h2>
+      Website designed by Brendan Chharawala, a Mechatronics Engineering student from the University of Waterloo. Site last updated: December 30th 2022.
+
+      Prototype designed alongside Jovan Mileusnic, Kevin Paknia, Lukas Furukawa, and Vasil Topalovic.
+    </h2>
+
+    <html>
+
+      
